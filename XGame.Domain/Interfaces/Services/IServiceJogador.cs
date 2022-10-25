@@ -7,7 +7,7 @@ namespace XGame.Domain.Interfaces.Services
     {
         AutenticarJogadorResponse AutenticarJogador(AutenticarJogadorRequest request);
 
-        Guid AdicionarJogador(AdicionarJogadorRequest request);
+        AdicionarJogadorResponse AdicionarJogador(AdicionarJogadorRequest request);
 
     }
 

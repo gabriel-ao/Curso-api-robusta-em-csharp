@@ -2,8 +2,8 @@
 {
     public enum EnumSituacaoJogador
     {
+        EmAnalise = 0,
         Ativo = 1,
         Bloqueado = 2,
-        EmAndamento = 0
     }
 }
