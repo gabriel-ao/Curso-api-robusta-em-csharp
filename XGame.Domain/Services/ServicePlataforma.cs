@@ -1,16 +1,12 @@
 ﻿using XGame.Domain.Arguments.Jogador;
+using XGame.Domain.Arguments.Plataforma;
 using XGame.Domain.Interfaces.Services;
 
 namespace XGame.Domain.Services
 {
-    public class ServiceJogador : IServiceJogador
+    public class ServicePlataforma : IServicePlataoforma
     {
-        public Guid AdicionarJogador(AdicionarJogadorRequest request)
-        {
-            throw new NotImplementedException();
-        }
-
-        public AutenticarJogadorResponse AutenticarJogador(AutenticarJogadorRequest request)
+        public AdicionarPlataformaResponse Adicionar(AutenticarJogadorRequest request)
         {
             throw new NotImplementedException();
         }
