@@ -46,6 +46,8 @@ namespace XGame.Domain.Services
             {
                 AddNotification("AutenticarJogadorRequest", Message.X0_E_OBRIGATORIO.ToFormat("AutenticarJogadorRequest"));
             }
+            Console.WriteLine("Verificando request " + request);
+            var response = _repositoryJogador.AutenticarJogador(jogador.Email.Endereco, jogador.Senha);
 
             var email = new Email(request.Email) ;
             var jogador = new Jogador(email, request.Senha);
