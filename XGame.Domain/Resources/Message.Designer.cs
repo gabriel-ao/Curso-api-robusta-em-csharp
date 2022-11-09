@@ -61,6 +61,15 @@ namespace XGame.Domain.Resources {
         }
         
         /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Operação realizada com Sucesso.
+        /// </summary>
+        internal static string OPERACAO_REALIZADA_COM_SUCESSO {
+            get {
+                return ResourceManager.GetString("OPERACAO_REALIZADA_COM_SUCESSO", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a {0} é obrigatório.
         /// </summary>
         internal static string X0_E_OBRIGATORIO {

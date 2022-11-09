@@ -34,10 +34,10 @@ namespace XGame.Domain.Services
             {
                 return null;
             }
-                
-            Guid id = _repositoryJogador.AdicionarJogador(jogador);
 
-            return new AdicionarJogadorResponse() { Id = id, Message = "Operação reealizada com sucesso" };
+            jogador = _repositoryJogador.AdicionarJogador(jogador);
+
+            return (AdicionarJogadorResponse)jogador;
         }
 
         public AutenticarJogadorResponse AutenticarJogador(AutenticarJogadorRequest request)
@@ -47,7 +47,7 @@ namespace XGame.Domain.Services
                 AddNotification("AutenticarJogadorRequest", Message.X0_E_OBRIGATORIO.ToFormat("AutenticarJogadorRequest"));
             }
             Console.WriteLine("Verificando request " + request);
-            var response = _repositoryJogador.AutenticarJogador(jogador.Email.Endereco, jogador.Senha);
+            //var response = _repositoryJogador.AutenticarJogador(jogador.Email.Endereco, jogador.Senha);
 
             var email = new Email(request.Email) ;
             var jogador = new Jogador(email, request.Senha);
@@ -58,16 +58,22 @@ namespace XGame.Domain.Services
             {
                 return null;
             }
-            Console.WriteLine("Verificando request " + request);
-            var response = _repositoryJogador.AutenticarJogador(jogador.Email.Endereco, jogador.Senha);
 
-            return response;
+            //jogador = _repositoryJogador.AutenticarJogador(jogador.Email.Endereco, jogador.Senha);
+
+
+            return (AutenticarJogadorResponse)jogador;
         }
 
-        private bool IsEmail(string email)
+
+        public AlterarJogadorResponse AlterarJogador(AlterarJogadorRequest request)
         {
-            return false;
+            throw new NotImplementedException();
         }
 
+        public IEnumerable<JogadorResponse> ListarJogador()
+        {
+            return _repositoryJogador.ListaJogador().ToList().Select(jogador => (JogadorResponse)jogador).ToList();
+        }
     }
 }

@@ -56,5 +56,10 @@ namespace XGame.Domain.Entities
         public string Senha { get; private set; }
 
         public EnumSituacaoJogador Status { get; private set; }
+
+        public override string ToString()
+        {
+            return this.Nome.PrimeiroNome + " " + this.Nome.UltimoNome;
+        }
     }
 }
