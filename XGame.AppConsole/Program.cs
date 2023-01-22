@@ -1,15 +1,25 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using XGame.Domain.Arguments.Jogador;
+﻿using Microsoft.Extensions.Configuration;
 using XGame.Domain.Services;
 
 namespace XGame.AppConsole
 {
     public class Program
     {
+        private static IConfiguration _config;
+        public Program (IConfiguration config)
+        {
+            _config = config;
+        }
+
+        //public void ConfigureServices(IServiceCollection services)
+        //{
+        //    string constr = this._config.GetConnectionString("XGameConnectionStrings");
+        //}
+
         static void Main(string[] args)
         {
+
+
             Console.WriteLine("iniciando .....");
 
             var service = new ServiceJogador();

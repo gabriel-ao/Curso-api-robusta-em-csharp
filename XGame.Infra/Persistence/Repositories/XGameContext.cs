@@ -6,11 +6,17 @@ namespace XGame.Infra.Persistence.Repositories
 {
     public class XGameContext : DbContext
     {
+
+        //public XGameContext() : base("Server=localhost;Database=XGame-DB;Port=5432;User Id=postgres;Password=gabriel; Persist Security Info=False; Connect Timeout=300")
         public XGameContext() : base("XGameConnectionStrings")
+        //public XGameContext() : base("")
         {
             Configuration.ProxyCreationEnabled = false;
             Configuration.LazyLoadingEnabled = false;
         }
+
+
+
 
         public IDbSet<Jogador> Jogadores { get; set; }
         public IDbSet<Plataforma> Plataformas { get; set; }
